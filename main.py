@@ -1,18 +1,16 @@
 from fastapi import FastAPI
 
-# CREATE A FASTAPI OBJECT
 app = FastAPI()
 
-#CREATE AN ENPOINT (ROUTE)
+
 @app.get("/")
 async def root():
-    return {"message": "Hello World, Hahaha!"}
+    return {"message": "Hello World"}
 
-#another endpoint with parameter
+
+
+
+# Another endpoint with parameter   .. here we change and personalise
 @app.get("/{name}")
 async def hello(name: str):
     return {"message": f"Hello, {name}!"}
-    #the f-string above is equivalent to:
-    #"hello", " + name + "!"
-    #"hello, {}!".format(name)
-    #("hello, ", name, "!")
